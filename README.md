@@ -1,4 +1,3 @@
-
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 # 简介
@@ -43,7 +42,7 @@ gojob通过raft强数据一致性协议、数据库异步多写、执行节点�
 
 **单机模式**
 
-![单机模式](https://github.com/wj596/shares/blob/master/gojob/gojob1.png)
+ <img src="https://github.com/wj596/shares/blob/master/gojob/gojob1.png" width="60%">  
 
 单机模式下主要运行逻辑：
 
@@ -57,7 +56,7 @@ gojob通过raft强数据一致性协议、数据库异步多写、执行节点�
 
 **集群模式**
 
-![集群模式](https://github.com/wj596/shares/blob/master/gojob/gojob2.png)
+ <img src="https://github.com/wj596/shares/blob/master/gojob/gojob2.png" width="60%">  
 
 集群模式下主要运行逻辑：
 
@@ -77,5 +76,3 @@ gojob通过raft强数据一致性协议、数据库异步多写、执行节点�
 
 
 # 更新日志
-
-
