@@ -18,16 +18,17 @@
 package conf
 
 import (
-	"gojob/models"
-	"gojob/util/fileutil"
-	"gojob/util/logs"
-	"gojob/util/netutil"
-	"gojob/util/stringutil"
 	"io/ioutil"
 	"log"
 	"path/filepath"
 	"strconv"
 	"strings"
+
+	"gojob/models"
+	"gojob/util/fileutil"
+	"gojob/util/logs"
+	"gojob/util/netutil"
+	"gojob/util/stringutil"
 
 	"gopkg.in/yaml.v2"
 )

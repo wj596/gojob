@@ -1,0 +1,27 @@
+# 服务运行数据存储目录，包含：业务数据、集群数据、日志数据等；默认为当前目录下的store文件夹
+# data_store_dir: D:\gojob1\store 
+# HTTP服务端口
+http_server_port: 8071 
+# 签名秘钥，用于api接口验签、调度接口验签、集群节点通信验签
+sign_secret_key: gojob 
+# 方便理解的集群节点名称,在集群中应保持唯一，不支持中文；如果是集群模式部署，此项必填
+# cluster_node_name: node9
+# 集群节点的TCP端口,用于集群内部通讯；如果不填写默认使用一个随机端口；集群模式部署，此项才有意义；
+# cluster_node_tcp_port: 7078
+datasource: # 数据源配置
+  -
+    driver_name: mysql #数据库驱动名称
+    data_source_name: root:root@tcp(localhost:3306)/gojob?parseTime=true  #数据源名称
+  #-
+  #  driver_name: mysql #数据库驱动名称
+  #  data_source_name: root:root@tcp(localhost:3306)/gojob2?parseTime=true  #数据源名称
+  #-
+  #  driver_name: mysql #数据库驱动名称
+  #  data_source_name: root:root@tcp(localhost:3306)/gojob3?parseTime=true  #数据源名称
+logger:
+  level: info
+  #encoding: json
+  #log_path: D://gojob   #日志文件存储目录
+  #max_size: 1 #日志文件最大M字节，大于这个数值将进行拆分
+  #max_age: 1 #日志文件最大存活的天数
+  #compress: false #是否启用文件压缩，格式为.gz
