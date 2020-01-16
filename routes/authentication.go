@@ -28,6 +28,8 @@ import (
 	"github.com/pkg/errors"
 )
 
+const certificateClearInterval = 1800
+
 type Certificate struct {
 	Token      string
 	activeTime int64
@@ -69,7 +71,7 @@ func doAuthorised(token string) (*Certificate, error) {
 
 // 清理过期Token
 func StartCertificateClearTask() {
-	ticker := time.NewTicker(2 * time.Second)
+	ticker := time.NewTicker(certificateClearInterval * time.Second)
 	go func(ticker *time.Ticker) {
 		for {
 			<-ticker.C

@@ -46,7 +46,12 @@ import (
 
 const (
 	raftLogFileName   = "cluster.log"
+	tcpMaxPool        = 3
 	raftOptTimeout    = 10 * time.Second
+	snapshotInterval  = 1800 * time.Second
+	snapshotThreshold = 3
+	trailingLogs      = 65535
+	snapshotRetain    = 1
 	detectNodeTimeout = 12 * time.Second
 )
 
@@ -85,12 +90,12 @@ func defaultRaftClusterConfig(clusterConfig *conf.ClusterConfig) *raftClusterCon
 		StorePath:         storePath,
 		LogStoreFile:      filepath.Join(storePath, "raft-log.bolt"),
 		StableStoreFile:   filepath.Join(storePath, "raft-stable.bolt"),
-		TcpMaxPool:        3,
-		TcpTimeout:        10 * time.Second,
-		SnapshotInterval:  180 * time.Second,
-		SnapshotThreshold: 2,
-		TrailingLogs:      2,
-		SnapshotRetain:    1,
+		TcpMaxPool:        tcpMaxPool,
+		TcpTimeout:        raftOptTimeout,
+		SnapshotInterval:  snapshotInterval,
+		SnapshotThreshold: snapshotThreshold,
+		TrailingLogs:      trailingLogs,
+		SnapshotRetain:    snapshotRetain,
 	}
 }
 

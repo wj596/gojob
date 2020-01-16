@@ -36,8 +36,9 @@ import (
 )
 
 const (
-	runModeCluster    = "cluster"
-	runModeStandalone = "standalone"
+	runModeCluster      = "cluster"
+	runModeStandalone   = "standalone"
+	monitorTaskInterval = 600
 )
 
 // 运行模式
@@ -135,7 +136,7 @@ func Signature(plaintext string) string {
 
 // 运行时监控任务
 func StartMonitorTask() {
-	ticker := time.NewTicker(2 * time.Second)
+	ticker := time.NewTicker(monitorTaskInterval * time.Second)
 	go func(ticker *time.Ticker) {
 		for {
 			<-ticker.C
