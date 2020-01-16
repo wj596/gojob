@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="logo">Go-Job分布式任务调度</div>
+    <div class="logo">gojob分布式任务调度</div>
     <!-- 折叠按钮 -->
     <div class="collapse-btn" @click="collapseChage">
       <span v-if="collapsed">

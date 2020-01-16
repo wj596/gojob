@@ -1,4 +1,4 @@
-# jqocp-ui
+# gojob-ui
 
 ## Project setup
 ```

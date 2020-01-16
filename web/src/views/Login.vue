@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <el-form class="login-form" :model="loginForm" label-position="left">
-      <h3 class="title">Go-Job分布式任务调度系统</h3>
+      <h3 class="title">gojob分布式任务调度系统</h3>
       <el-form-item>
         <el-input v-model="loginForm.username" @focus="error=''">
           			<template slot="prepend">帐号</template>
