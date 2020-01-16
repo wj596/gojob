@@ -44,10 +44,15 @@ func HostAddrCheck(addr string) bool {
 }
 
 // 获取一个空闲的TCP端口
-func GetFreePort() int {
+func GetFreePort(bind string) int {
+	ip := ":"
+	if "" != bind {
+		ip = bind + ":"
+	}
+
 	var port int
 	for i := 17070; i < 65536; i++ {
-		addr, _ := net.ResolveTCPAddr("tcp", ":"+strconv.Itoa(i))
+		addr, _ := net.ResolveTCPAddr("tcp", ip+strconv.Itoa(i))
 		listener, err := net.ListenTCP("tcp", addr)
 		if err == nil {
 			listener.Close()

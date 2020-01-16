@@ -109,12 +109,8 @@ func addScheduler(job *models.Job) error {
 	schedulerMapLock.Lock()
 	defer schedulerMapLock.Unlock()
 
-	if models.ExecutorSelectStrategyRound == job.ExecutorSelectStrategy {
-		roundLoadBalances[job.Id] = bl.NewRoundLoadBalance()
-	}
-	if models.ExecutorSelectStrategyWeightRound == job.ExecutorSelectStrategy {
-		weightRoundLoadBalances[job.Id] = bl.NewWeightRoundLoadBalance()
-	}
+	roundLoadBalances[job.Id] = bl.NewRoundLoadBalance()
+	weightRoundLoadBalances[job.Id] = bl.NewWeightRoundLoadBalance()
 	task := newTask(job)
 	cron, err := icron.NewJobScheduler(job.Cron, task)
 	if err != nil {

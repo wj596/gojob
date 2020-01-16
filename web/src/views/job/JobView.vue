@@ -53,8 +53,8 @@
         <tr>
           <td class="view_table_label">执行失败处理策略</td>
           <td class="view_table_td">
-            <span v-if="job.failTakeover==0">错误安全</span>
-            <span v-if="job.failTakeover==1">错误重试</span>
+            <span v-if="job.failTakeover==0">失败安全</span>
+            <span v-if="job.failTakeover==1">失败转移</span>
           </td>
           <td class="view_table_label">misfire超时时间</td>
           <td class="view_table_td">

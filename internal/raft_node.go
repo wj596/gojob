@@ -187,15 +187,16 @@ var leaderDetectCh chan string
 
 // 引导集群
 func BootstrapCluster(clusterConfig *conf.ClusterConfig) {
+	bindIp := strings.Split(clusterConfig.CurrentHttpAddr, ":")[0]
 	if clusterConfig.CurrentTcpPort == 0 {
 		lastTcpPort := models.GetLastTcpPort()
 		if lastTcpPort == 0 {
-			lastTcpPort = netutil.GetFreePort()
+			lastTcpPort = netutil.GetFreePort(bindIp)
 		}
 		models.SetLastTcpPort(lastTcpPort)
 		clusterConfig.CurrentTcpPort = lastTcpPort
 	}
-	clusterConfig.CurrentTcpAddr = strings.Split(clusterConfig.CurrentHttpAddr, ":")[0] + ":" + strconv.Itoa(clusterConfig.CurrentTcpPort)
+	clusterConfig.CurrentTcpAddr = bindIp + ":" + strconv.Itoa(clusterConfig.CurrentTcpPort)
 	raftClusterConfig := defaultRaftClusterConfig(clusterConfig)
 
 	lastNodeName := models.GetLastNodeName()
