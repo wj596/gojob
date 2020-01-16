@@ -1,7 +1,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-# gojob
+# 简介
 
 gojob是轻量级的任务调度解决方案，使用Go语言编写，协程并发机制可支持大规模任务并行调度。gojob为调度节点，你的业务系统就是执行节点，凡是暴露出HTTP服务的业务方法都可以被调度，对业务系统完全无侵入。HTTP协议方便夸平台，契合当前主流的微服务架构。
 
@@ -41,12 +41,24 @@ gojob通过raft强数据一致性协议、数据库异步多写、执行节点�
 
 # 逻辑架构图
 
+**单机模式**
+
 ![单机模式](https://github.com/wj596/shares/blob/master/gojob/gojob1.jpg)
 
+单机模式下主要运行逻辑
+
+1.通过WEB界面定义作业元数据，并保存到本地存储引擎
+
+3.任务调度器从本地持久化存储获取作业调度信息
+
+4.按照执行节点选择策略选取执行节点，发送HTTP调用请求
+
+5.调度日志异步多写到各个MySQL节点
 
 
 
 
-# Changelog
+
+# 更新日志
 
 
