@@ -33,11 +33,7 @@ import (
 )
 
 func main() {
-	//ac := flag.String("ac", "application.yml", "application config file path")
-	//cc := flag.String("cc", "cluster.yml", "cluster config file path")
-	//mode := flag.String("m", "standalone", "running mode standalone or cluster")
-
-	ac := flag.String("ac", "D:\\gojobstandalone\\application.yml", "application config file path")
+	ac := flag.String("ac", "application.yml", "application config file path")
 	cc := flag.String("cc", "cluster.yml", "cluster config file path")
 	mode := flag.String("m", "standalone", "running mode standalone or cluster")
 
