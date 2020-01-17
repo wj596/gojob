@@ -82,7 +82,7 @@ gojob使用方便，一般情况下，下载解压安装包，配置好MySQL连�
 
 **单机模式**
 
- <img src="https://github.com/wj596/shares/blob/master/gojob/gojob1.png" width="60%">  
+ <img src="https://upload-images.jianshu.io/upload_images/2897315-a27c5bb01fc7f90d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="60%">  
 
 单机模式下主要运行逻辑：
 
