@@ -48,7 +48,7 @@ gojob使用方便，一般情况下，下载解压安装包，配置好MySQL连�
 
 **二进制安装包**
 
-直接下载对应操作系统的安装包
+直接下载对应操作系统的安装包,[点击下载](https://github.com/wj596/gojob/releases)
 
 **源码编译**
 
@@ -68,15 +68,15 @@ gojob使用方便，一般情况下，下载解压安装包，配置好MySQL连�
 
 # 使用说明
 
-[快速开始](https://github.com/wj596/gojob/wiki/faststart?_blank)
+快速开始
 
-[单机部署](https://github.com/wj596/gojob/wiki/standalone?_blank)
+单机部署
 
-[集群部署](https://github.com/wj596/gojob/wiki/cluster?_blank)
+集群部署
 
-[作业配置](https://github.com/wj596/gojob/wiki/deploy?_blank)
+作业配置
 
-[二次开发](https://github.com/wj596/gojob/wiki/develop?_blank)
+二次开发
 
 # 逻辑架构图
 
