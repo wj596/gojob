@@ -1,4 +1,3 @@
-
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 # 项目简介
@@ -69,7 +68,7 @@ gojob使用方便，一般情况下，下载解压安装包，配置好MySQL连�
 
 # 使用说明
 
-快速开始
+[快速开始](https://github.com/wj596/gojob/wiki/FastStart?_blank)
 
 单机部署
 
