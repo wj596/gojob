@@ -68,15 +68,15 @@ gojob使用方便，一般情况下，下载解压安装包，配置好MySQL连�
 
 # 使用说明
 
-[快速开始](https://github.com/wj596/gojob/wiki/FastStart?_blank)
+[快速开始](https://github.com/wj596/gojob/wiki/faststart?_blank)
 
-单机部署
+[单机部署](https://github.com/wj596/gojob/wiki/standalone?_blank)
 
-集群部署
+[集群部署](https://github.com/wj596/gojob/wiki/cluster?_blank)
 
-作业配置
+[作业配置](https://github.com/wj596/gojob/wiki/deploy?_blank)
 
-二次开发
+[二次开发](https://github.com/wj596/gojob/wiki/develop?_blank)
 
 # 逻辑架构图
 
