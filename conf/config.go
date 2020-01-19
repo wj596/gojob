@@ -18,6 +18,7 @@
 package conf
 
 import (
+	"gojob/util/stringutil"
 	"io/ioutil"
 	"log"
 	"path/filepath"
@@ -28,8 +29,6 @@ import (
 	"gojob/util/fileutil"
 	"gojob/util/logs"
 	"gojob/util/netutil"
-	"gojob/util/stringutil"
-
 	"gopkg.in/yaml.v2"
 )
 
@@ -133,9 +132,13 @@ func GetConfig() *Config {
 
 // 初始化集群配置
 func InitClusterConfig(path string) *ClusterConfig {
-	if "" == config.ClusterNodeName || stringutil.IsChineseChar(config.ClusterNodeName) {
-		logs.Errorf("请正确填写cluster_node_name的属性值（不支持中文）")
-		log.Panic("请正确填写cluster_node_name的属性值（不支持中文）")
+	if "" == config.ClusterNodeName {
+		logs.Errorf("请正确填写cluster_node_name的属性值")
+		log.Panic("请正确填写cluster_node_name的属性值")
+	}
+	if stringutil.IsChineseChar(config.ClusterNodeName) {
+		logs.Errorf("请正确填写cluster_node_name的属性值,不支持中文")
+		log.Panic("请正确填写cluster_node_name的属性值,不支持中文")
 	}
 	var ccf ClusterConfig
 	data, exist := ioutil.ReadFile(path)

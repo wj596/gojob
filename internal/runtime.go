@@ -50,6 +50,10 @@ var startTime time.Time
 var alarmedMap sync.Map
 
 func SetRunMode(mode string) {
+	if runModeCluster != mode && runModeStandalone != mode {
+		logs.Error("请正确填写-m 的属性值(cluster或standalone)")
+		log.Panic("请正确填写-m 的属性值(cluster或standalone)")
+	}
 	if runMode.Load() == "" {
 		runMode.Store(mode)
 		startTime = time.Now()

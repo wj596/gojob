@@ -41,8 +41,8 @@ func main() {
 	flag.Parse()
 	log.Print("Go-Job 启动")
 	config := conf.InitConfig(*ac)
-	internal.SetRunMode(*mode)
 	logs.InitLogger(config.LoggerConfig)
+	internal.SetRunMode(*mode)
 	logs.Infof("配置文件：%s", *ac)
 	logs.Infof("运行模式：%s", *mode)
 	log.Printf("配置文件：%s", *ac)
@@ -66,6 +66,11 @@ func usage() {
 	fmt.Fprintf(os.Stderr, `gojob v1.0.0
 Usage: gojob [-c filename] [-m standalone/cluster]
 Options:
+  -ac string
+        application config file path (default "application.yml")
+  -cc string
+        cluster config file path (default "cluster.yml")
+  -m string
+        running mode standalone or cluster (default "standalone")
 `)
-	flag.PrintDefaults()
 }
